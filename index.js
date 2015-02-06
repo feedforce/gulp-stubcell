@@ -8,6 +8,7 @@ var defaults = {
   keepalive : false,
   record : {},
   looseCompare : false,
+  cors : true
 };
 
 var server;
@@ -22,12 +23,14 @@ module.exports = {
     var record = config.record || defaults.record;
     var debug = config.debug || defaults.debug;
     var looseCompare = config.looseCompare || defaults.looseCompare;
+    var cors = config.cors || defaults.cors;
 
     stubcell.loadEntry(entry, {
       basepath : basepath,
       record : record,
       debug : debug,
-      looseCompare: looseCompare
+      looseCompare: looseCompare,
+      cors : cors
     });
     stub = stubcell.server();
     server = stub.listen(port, function() {
