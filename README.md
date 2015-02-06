@@ -31,6 +31,13 @@ gulp.task('stubcell', function() {
     record : {
       // request delegate to
       proxy : 'http://localhost:3001',
+    },
+    // cors option
+    cors: {
+      'Access-Control-Allow-Origin':  '*',
+      'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+      'Access-Control-Allow-Headers': 'content-type',
+      'Access-Control-Allow-Credentials': 'true'
     }
   });
 });
